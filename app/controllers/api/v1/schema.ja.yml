@@ -1,0 +1,188 @@
+"$schema": http://json-schema.org/draft-04/hyper-schema
+definitions:
+    created_at:
+        type: string
+        example: "2015-08-05T06:50:24.000Z"
+    updated_at:
+        type: string
+        example: "2015-08-05T06:50:24.000Z"
+    user:
+        title: "ユーザー"
+        type: object
+        definitions:
+            id:
+                type: integer
+                example: 1
+            username:
+                type: string
+                example: "balmychan"
+            name:
+                type: string
+                example: "Ayumi Goto"
+            image:
+                type: string
+                example: "https://pbs.twimg.com/profile_images/1286698114/KM56TsK9"
+            password:
+                type: string
+                example: hogehoge
+            follows_count:
+                type: integer
+                example: 20
+            followers_count:
+                type: integer
+                example: 20
+            tweets_count:
+                type: integer
+                example: 1200
+        properties:
+            id:
+                "$ref": "#/definitions/user/definitions/id"
+            username:
+                "$ref": "#/definitions/user/definitions/username"
+            name:
+                "$ref": "#/definitions/user/definitions/name"
+            image:
+                "$ref": "#/definitions/user/definitions/image"
+            created_at:
+                "$ref": "#/definitions/created_at"
+            updated_at:
+                "$ref": "#/definitions/updated_at"
+            follows_count:
+                "$ref": "#/definitions/user/definitions/follows_count"
+            followers_count:
+                "$ref": "#/definitions/user/definitions/followers_count"
+            tweets_count:
+                "$ref": "#/definitions/user/definitions/tweets_count"
+        required:
+            - username
+            - name
+            - password
+        links:
+            - description: "ユーザー検索"
+              href: "/api/v1/u"
+              method: GET
+              rel: instances
+              title: "ユーザー検索"
+              type: object
+              schema:
+                properties:
+                    keyword:
+                        type: string
+                        example: "菊"
+            - description: "ログイン"
+              href: "/api/v1/u/login"
+              method: POST
+              rel: instance
+              title: "ログイン"
+              type: object
+              schema:
+                properties:
+                    username:
+                        "$ref": "#/definitions/user/definitions/username"
+                    password:
+                        "$ref": "#/definitions/user/definitions/password"
+            - description: "ログアウト"
+              href: "/api/v1/u/logout"
+              method: GET
+              rel: instance
+              title: "ログアウト"
+              type: object
+            - description: "ユーザー作成"
+              href: "/api/v1/u/signup"
+              method: POST
+              rel: instance
+              title: "ユーザー作成"
+              type: object
+              schema:
+                properties:
+                    username:
+                        "$ref": "#/definitions/user/definitions/username"
+                    name:
+                        "$ref": "#/definitions/user/definitions/name"
+                    password:
+                        "$ref": "#/definitions/user/definitions/password"
+            - description: "指定のユーザーをフォローする"
+              href: "/api/v1/u/{(#/definitions/user/definitions/id)}/follow"
+              method: GET
+              rel: self
+              title: "フォロー"
+              type: object
+            - description: "指定のユーザーのフォローを解除する"
+              href: "/api/v1/u/{(#/definitions/user/definitions/id)}/unfollow"
+              method: GET
+              rel: self
+              title: "フォロー解除"
+              type: object
+            - description: "現在ログイン中のユーザーがフォローしているユーザーの一覧を返す"
+              href: "/api/v1/u/follows"
+              method: GET
+              rel: instances
+              title: "フォロワー一覧"
+              type: object
+            - description: "現在ログイン中のユーザーがフォローされているユーザーの一覧を返す"
+              href: "/api/v1/u/followers"
+              method: GET
+              rel: instances
+              title: "フォロワー一覧"
+              type: object
+    tweet:
+        title: "つぶやき"
+        type: object
+        definitions:
+            id:
+                type: integer
+                example: 1
+            text:
+                type: string
+                pattern: ".*{1, 140}"
+                example: "オロなう"
+            favorites:
+                type: integer
+                example: 100
+        properties:
+            id:
+                "$ref": "#/definitions/tweet/definitions/id"
+            user_id:
+                "$ref": "#/definitions/user/definitions/id"
+            text:
+                "$ref": "#/definitions/tweet/definitions/text"
+            created_at:
+                "$ref": "#/definitions/created_at"
+            updated_at:
+                "$ref": "#/definitions/updated_at"
+            favorites:
+                "$ref": "#/definitions/tweet/definitions/favorites"
+            user:
+                "$ref": "#/definitions/user"
+        links:
+            - description: "ログイン中のユーザーとフォローしているユーザーのつぶやき一覧を返す"
+              href: "/api/v1/t"
+              method: GET
+              rel: instances
+              title: "つぶやき一覧"
+              type: object
+            - description: "つぶやきを投稿する"
+              href: "/api/v1/t/create"
+              method: GET
+              rel: instances
+              title: "つぶやきを投稿する"
+              type: object
+              schema:
+                text:
+                    "$ref": "#definitions/tweet/definitions/text"
+properties:
+    user:
+        "$ref": "#/definitions/user"
+    tweet:
+        "$ref": "#/definitions/tweet"
+type:
+- object
+description: |
+    Orotter API References
+    簡易化のために、すべてGETにしており、CSRF対策もしていません
+    また、ログイン認証もOAuthなどは使用せず、パラメータを付与するだけでできるようになっています
+    API => http://orotter-balmychan.c9.io
+links:
+    - href: "https://orotter-balmychan.c9.io"
+      rel: self
+title: "Orotter API References"
