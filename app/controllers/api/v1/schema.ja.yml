@@ -170,6 +170,19 @@ definitions:
               schema:
                 text:
                     "$ref": "#definitions/tweet/definitions/text"
+            - description: "つぶやきをお気に入りする"
+              href: "/api/v1/t/{(#/definitions/tweet/definitions/id)}/favorite"
+              method: GET
+              rel: instance
+              title: "お気に入りする"
+              type: object
+            - description: "つぶやきのお気に入りを解除する"
+              href: "/api/v1/t/{(#/definitions/tweet/definitions/id)}/unfavorite"
+              method: GET
+              rel: instance
+              title: "お気に入りを解除する"
+              type: object
+            
 properties:
     user:
         "$ref": "#/definitions/user"

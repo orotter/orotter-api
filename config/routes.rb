@@ -16,6 +16,8 @@ Rails.application.routes.draw do
       get  'u/followers'    => 'users#followers'
       get  't'        => 'tweets#index'
       get  't/create' => 'tweets#create'
+      get  't/:id/favorite'   => 'tweets#favorite'
+      get  't/:id/unfavorite' => 'tweets#unfavorite'
       #get 'a' => 'articles#index'
       #get 'a/:id' => 'articles#show'
       #get 'a/:id/like' => 'articles#like'
