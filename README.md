@@ -12,9 +12,9 @@ API => http://orotter-balmychan.c9.io
  * [GET /api/v1/t/:id/unfavorite](#get-apiv1tidunfavorite)
 * [ユーザー](#ユーザー)
  * [GET /api/v1/u](#get-apiv1u)
- * [POST /api/v1/u/login](#post-apiv1ulogin)
+ * [GET /api/v1/u/login](#get-apiv1ulogin)
  * [GET /api/v1/u/logout](#get-apiv1ulogout)
- * [POST /api/v1/u/signup](#post-apiv1usignup)
+ * [GET /api/v1/u/signup](#get-apiv1usignup)
  * [GET /api/v1/u/:id/follow](#get-apiv1uidfollow)
  * [GET /api/v1/u/:id/unfollow](#get-apiv1uidunfollow)
  * [GET /api/v1/u/follows](#get-apiv1ufollows)
@@ -246,7 +246,7 @@ Content-Type: application/json
 ]
 ```
 
-### POST /api/v1/u/login
+### GET /api/v1/u/login
 ログイン
 
 * username
@@ -257,18 +257,12 @@ Content-Type: application/json
  * Type: string
 
 ```
-POST /api/v1/u/login HTTP/1.1
-Content-Type: application/json
+GET /api/v1/u/login?password=hogehoge&username=balmychan HTTP/1.1
 Host: orotter-balmychan.c9.io
-
-{
-  "username": "balmychan",
-  "password": "hogehoge"
-}
 ```
 
 ```
-HTTP/1.1 201 Created
+HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
@@ -309,7 +303,7 @@ Content-Type: application/json
 }
 ```
 
-### POST /api/v1/u/signup
+### GET /api/v1/u/signup
 ユーザー作成
 
 * username
@@ -323,19 +317,12 @@ Content-Type: application/json
  * Type: string
 
 ```
-POST /api/v1/u/signup HTTP/1.1
-Content-Type: application/json
+GET /api/v1/u/signup?name=Ayumi+Goto&password=hogehoge&username=balmychan HTTP/1.1
 Host: orotter-balmychan.c9.io
-
-{
-  "username": "balmychan",
-  "name": "Ayumi Goto",
-  "password": "hogehoge"
-}
 ```
 
 ```
-HTTP/1.1 201 Created
+HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
