@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
 
   def as_json(options = { })
     super((options || { }).merge({
-        :include => [:follows, :followers],
+        :include => [],
         :methods => [:favorites, :follows_count, :followers_count, :tweets_count]
     }))
   end

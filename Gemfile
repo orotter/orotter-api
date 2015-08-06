@@ -28,6 +28,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 # Good!!
 gem 'activerecord-reputation-system'
+# For README.md `jdoc app/controllers/api/v1/schema.ja.yml > README.md
+gem 'jdoc'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
