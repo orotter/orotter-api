@@ -8,6 +8,8 @@ API => http://orotter-balmychan.c9.io
 * [つぶやき](#つぶやき)
  * [GET /api/v1/t](#get-apiv1t)
  * [GET /api/v1/t/create](#get-apiv1tcreate)
+ * [GET /api/v1/t/:id/favorite](#get-apiv1tidfavorite)
+ * [GET /api/v1/t/:id/unfavorite](#get-apiv1tidunfavorite)
 * [ユーザー](#ユーザー)
  * [GET /api/v1/u](#get-apiv1u)
  * [POST /api/v1/u/login](#post-apiv1ulogin)
@@ -113,6 +115,72 @@ Content-Type: application/json
     }
   }
 ]
+```
+
+### GET /api/v1/t/:id/favorite
+つぶやきをお気に入りする
+
+```
+GET /api/v1/t/1/favorite HTTP/1.1
+Host: orotter-balmychan.c9.io
+```
+
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 1,
+  "user_id": 1,
+  "text": "オロなう",
+  "created_at": "2015-08-05T06:50:24.000Z",
+  "updated_at": "2015-08-05T06:50:24.000Z",
+  "favorites": 100,
+  "user": {
+    "id": 1,
+    "username": "balmychan",
+    "name": "Ayumi Goto",
+    "image": "https://pbs.twimg.com/profile_images/1286698114/KM56TsK9",
+    "created_at": "2015-08-05T06:50:24.000Z",
+    "updated_at": "2015-08-05T06:50:24.000Z",
+    "follows_count": 20,
+    "followers_count": 20,
+    "tweets_count": 1200
+  }
+}
+```
+
+### GET /api/v1/t/:id/unfavorite
+つぶやきのお気に入りを解除する
+
+```
+GET /api/v1/t/1/unfavorite HTTP/1.1
+Host: orotter-balmychan.c9.io
+```
+
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 1,
+  "user_id": 1,
+  "text": "オロなう",
+  "created_at": "2015-08-05T06:50:24.000Z",
+  "updated_at": "2015-08-05T06:50:24.000Z",
+  "favorites": 100,
+  "user": {
+    "id": 1,
+    "username": "balmychan",
+    "name": "Ayumi Goto",
+    "image": "https://pbs.twimg.com/profile_images/1286698114/KM56TsK9",
+    "created_at": "2015-08-05T06:50:24.000Z",
+    "updated_at": "2015-08-05T06:50:24.000Z",
+    "follows_count": 20,
+    "followers_count": 20,
+    "tweets_count": 1200
+  }
+}
 ```
 
 ## ユーザー
@@ -386,3 +454,4 @@ Content-Type: application/json
   }
 ]
 ```
+
