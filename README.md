@@ -6,8 +6,8 @@ API => http://orotter-balmychan.c9.io
 
 
 * [つぶやき](#つぶやき)
- * [POST（GETも許可） /api/v1/t](#post（getも許可）-apiv1t)
- * [GET /api/v1/t/create](#get-apiv1tcreate)
+ * [GET /api/v1/t](#get-apiv1t)
+ * [POST（GETも許可） /api/v1/t/create](#post（getも許可）-apiv1tcreate)
  * [GET /api/v1/t/:id/favorite](#get-apiv1tidfavorite)
  * [GET /api/v1/t/:id/unfavorite](#get-apiv1tidunfavorite)
 * [ユーザー](#ユーザー)
@@ -46,11 +46,11 @@ API => http://orotter-balmychan.c9.io
 * user
  * Type: object
 
-### POST（GETも許可） /api/v1/t
+### GET /api/v1/t
 ログイン中のユーザーとフォローしているユーザーのつぶやき一覧を返す
 
 ```
-POST（GETも許可） /api/v1/t HTTP/1.1
+GET /api/v1/t HTTP/1.1
 Host: orotter-balmychan.c9.io
 ```
 
@@ -81,12 +81,12 @@ Content-Type: application/json
 ]
 ```
 
-### GET /api/v1/t/create
+### POST（GETも許可） /api/v1/t/create
 つぶやきを投稿する
 
 
 ```
-GET /api/v1/t/create HTTP/1.1
+POST（GETも許可） /api/v1/t/create HTTP/1.1
 Host: orotter-balmychan.c9.io
 ```
 

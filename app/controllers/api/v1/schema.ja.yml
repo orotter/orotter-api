@@ -157,13 +157,13 @@ definitions:
         links:
             - description: "ログイン中のユーザーとフォローしているユーザーのつぶやき一覧を返す"
               href: "/api/v1/t"
-              method: POST（GETも許可）
+              method: GET
               rel: instances
               title: "つぶやき一覧"
               type: object
             - description: "つぶやきを投稿する"
               href: "/api/v1/t/create"
-              method: GET
+              method: POST（GETも許可）
               rel: instances
               title: "つぶやきを投稿する"
               type: object
