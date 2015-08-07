@@ -1,12 +1,12 @@
 # Orotter API References
 Orotter API References
-簡易化のために、すべてGETにしており、CSRF対策もしていません
-また、ログイン認証もOAuthなどは使用せず、パラメータを付与するだけでできるようになっています
+簡易化のために、CSRF対応はOFFにしています
+また、ログイン認証もOAuthなどは使用せず、パラメータを付与してリクエストするだけでできるようになっています
 API => http://orotter-balmychan.c9.io
 
 
 * [つぶやき](#つぶやき)
- * [POST /api/v1/t](#post-apiv1t)
+ * [POST（GETも許可） /api/v1/t](#post（getも許可）-apiv1t)
  * [GET /api/v1/t/create](#get-apiv1tcreate)
  * [GET /api/v1/t/:id/favorite](#get-apiv1tidfavorite)
  * [GET /api/v1/t/:id/unfavorite](#get-apiv1tidunfavorite)
@@ -46,16 +46,16 @@ API => http://orotter-balmychan.c9.io
 * user
  * Type: object
 
-### POST /api/v1/t
+### POST（GETも許可） /api/v1/t
 ログイン中のユーザーとフォローしているユーザーのつぶやき一覧を返す
 
 ```
-POST /api/v1/t HTTP/1.1
+POST（GETも許可） /api/v1/t HTTP/1.1
 Host: orotter-balmychan.c9.io
 ```
 
 ```
-HTTP/1.1 201 Created
+HTTP/1.1 200 OK
 Content-Type: application/json
 
 [
