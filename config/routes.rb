@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get  'u/logout'         => 'sessions#logout'
       get  'u/signup'         => 'sessions#signup'
       post 'u/signup'         => 'sessions#signup'
+      get  'u/current'        => 'users#current'
       get  'u/:id/follow'     => 'users#follow'
       get  'u/:id/unfollow'   => 'users#unfollow'
       get  'u/follows'        => 'users#follows'

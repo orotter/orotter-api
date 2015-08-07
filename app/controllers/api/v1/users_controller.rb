@@ -1,5 +1,10 @@
 module Api::V1
   class UsersController < ApiController
+    
+    def current
+      render :json => current_user
+    end
+    
     def search
       keyword = params[:keyword].presence || ""
       @users = User.where('name LIKE ? or username LIKE ?', "%#{keyword}%", "%#{keyword}%")

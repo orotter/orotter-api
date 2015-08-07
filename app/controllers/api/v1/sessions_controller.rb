@@ -1,6 +1,7 @@
 module Api::V1
   class SessionsController < ApiController
     skip_before_action :authenticate_user
+
     def login
       @user = User.find_by_username(params[:username])
       if @user == nil || !@user.valid_password?(params[:password]) || !sign_in(:user, @user)
@@ -27,9 +28,8 @@ module Api::V1
       })
       @user.save!
       sign_in(:user, @user)
-      render :json => {
-        :user => @user
-      }
+      render :json => @user
     end
+    
   end
 end

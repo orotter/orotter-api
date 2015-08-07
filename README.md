@@ -14,6 +14,7 @@ API => http://orotter-balmychan.c9.io
  * [GET /api/v1/u](#get-apiv1u)
  * [POST, GET /api/v1/u/login](#post,-get-apiv1ulogin)
  * [GET /api/v1/u/logout](#get-apiv1ulogout)
+ * [GET /api/v1/u/current](#get-apiv1ucurrent)
  * [POST, GET /api/v1/u/signup](#post,-get-apiv1usignup)
  * [GET /api/v1/u/:id/follow](#get-apiv1uidfollow)
  * [GET /api/v1/u/:id/unfollow](#get-apiv1uidunfollow)
@@ -283,6 +284,31 @@ Content-Type: application/json
 
 ```
 GET /api/v1/u/logout HTTP/1.1
+Host: orotter-balmychan.c9.io
+```
+
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 1,
+  "username": "balmychan",
+  "name": "Ayumi Goto",
+  "image": "https://pbs.twimg.com/profile_images/1286698114/KM56TsK9",
+  "created_at": "2015-08-05T06:50:24.000Z",
+  "updated_at": "2015-08-05T06:50:24.000Z",
+  "follows_count": 20,
+  "followers_count": 20,
+  "tweets_count": 1200
+}
+```
+
+### GET /api/v1/u/current
+現在ログイン中のユーザー情報を返す
+
+```
+GET /api/v1/u/current HTTP/1.1
 Host: orotter-balmychan.c9.io
 ```
 

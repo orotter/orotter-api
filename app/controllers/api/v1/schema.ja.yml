@@ -87,6 +87,12 @@ definitions:
               rel: instance
               title: "ログアウト"
               type: object
+            - description: "現在ログイン中のユーザー情報を返す"
+              href: "/api/v1/u/current"
+              method: GET
+              rel: instance
+              title: "現在ログイン中のユーザー情報"
+              type: object
             - description: "ユーザー作成"
               href: "/api/v1/u/signup"
               method: POST, GET
