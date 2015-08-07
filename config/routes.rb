@@ -6,25 +6,21 @@ Rails.application.routes.draw do
   # Routing for API
   namespace 'api' do
     namespace 'v1' do
-      get  'u'        => 'users#search'
-      get  'u/login'  => 'sessions#login'
-      get  'u/logout' => 'sessions#logout'
-      get  'u/signup' => 'sessions#signup'
-      get  'u/:id/follow'   => 'users#follow'
-      get  'u/:id/unfollow' => 'users#unfollow'
-      get  'u/follows'      => 'users#follows'
-      get  'u/followers'    => 'users#followers'
-      get  't'        => 'tweets#index'
-      get  't/create' => 'tweets#create'
-      post 't/create' => 'tweets#create'
-      # match 't/create', to: 'tweets#create', via: [:get, :post, :options]
-      # options 't/create' => 'tweets#create'
+      get  'u'                => 'users#search'
+      get  'u/login'          => 'sessions#login'
+      post 'u/login'          => 'sessions#login'
+      get  'u/logout'         => 'sessions#logout'
+      get  'u/signup'         => 'sessions#signup'
+      post 'u/signup'         => 'sessions#signup'
+      get  'u/:id/follow'     => 'users#follow'
+      get  'u/:id/unfollow'   => 'users#unfollow'
+      get  'u/follows'        => 'users#follows'
+      get  'u/followers'      => 'users#followers'
+      get  't'                => 'tweets#index'
+      get  't/create'         => 'tweets#create'
+      post 't/create'         => 'tweets#create'
       get  't/:id/favorite'   => 'tweets#favorite'
       get  't/:id/unfavorite' => 'tweets#unfavorite'
-      #get 'a' => 'articles#index'
-      #get 'a/:id' => 'articles#show'
-      #get 'a/:id/like' => 'articles#like'
-      #get 'w' => 'weather#index'
     end
   end
   

@@ -6,15 +6,15 @@ API => http://orotter-balmychan.c9.io
 
 
 * [つぶやき](#つぶやき)
- * [GET /api/v1/t](#get-apiv1t)
+ * [POST /api/v1/t](#post-apiv1t)
  * [GET /api/v1/t/create](#get-apiv1tcreate)
  * [GET /api/v1/t/:id/favorite](#get-apiv1tidfavorite)
  * [GET /api/v1/t/:id/unfavorite](#get-apiv1tidunfavorite)
 * [ユーザー](#ユーザー)
  * [GET /api/v1/u](#get-apiv1u)
- * [GET /api/v1/u/login](#get-apiv1ulogin)
+ * [POST（GETも許可） /api/v1/u/login](#post（getも許可）-apiv1ulogin)
  * [GET /api/v1/u/logout](#get-apiv1ulogout)
- * [GET /api/v1/u/signup](#get-apiv1usignup)
+ * [POST（GETも許可） /api/v1/u/signup](#post（getも許可）-apiv1usignup)
  * [GET /api/v1/u/:id/follow](#get-apiv1uidfollow)
  * [GET /api/v1/u/:id/unfollow](#get-apiv1uidunfollow)
  * [GET /api/v1/u/follows](#get-apiv1ufollows)
@@ -46,16 +46,16 @@ API => http://orotter-balmychan.c9.io
 * user
  * Type: object
 
-### GET /api/v1/t
+### POST /api/v1/t
 ログイン中のユーザーとフォローしているユーザーのつぶやき一覧を返す
 
 ```
-GET /api/v1/t HTTP/1.1
+POST /api/v1/t HTTP/1.1
 Host: orotter-balmychan.c9.io
 ```
 
 ```
-HTTP/1.1 200 OK
+HTTP/1.1 201 Created
 Content-Type: application/json
 
 [
@@ -246,7 +246,7 @@ Content-Type: application/json
 ]
 ```
 
-### GET /api/v1/u/login
+### POST（GETも許可） /api/v1/u/login
 ログイン
 
 * username
@@ -257,7 +257,7 @@ Content-Type: application/json
  * Type: string
 
 ```
-GET /api/v1/u/login?password=hogehoge&username=balmychan HTTP/1.1
+POST（GETも許可） /api/v1/u/login HTTP/1.1
 Host: orotter-balmychan.c9.io
 ```
 
@@ -303,7 +303,7 @@ Content-Type: application/json
 }
 ```
 
-### GET /api/v1/u/signup
+### POST（GETも許可） /api/v1/u/signup
 ユーザー作成
 
 * username
@@ -317,7 +317,7 @@ Content-Type: application/json
  * Type: string
 
 ```
-GET /api/v1/u/signup?name=Ayumi+Goto&password=hogehoge&username=balmychan HTTP/1.1
+POST（GETも許可） /api/v1/u/signup HTTP/1.1
 Host: orotter-balmychan.c9.io
 ```
 
