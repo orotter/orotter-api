@@ -7,14 +7,14 @@ API => http://orotter-balmychan.c9.io
 
 * [つぶやき](#つぶやき)
  * [GET /api/v1/t](#get-apiv1t)
- * [POST（GETも許可） /api/v1/t/create](#post（getも許可）-apiv1tcreate)
+ * [POST(GETも許可) /api/v1/t/create](#post(getも許可)-apiv1tcreate)
  * [GET /api/v1/t/:id/favorite](#get-apiv1tidfavorite)
  * [GET /api/v1/t/:id/unfavorite](#get-apiv1tidunfavorite)
 * [ユーザー](#ユーザー)
  * [GET /api/v1/u](#get-apiv1u)
- * [POST（GETも許可） /api/v1/u/login](#post（getも許可）-apiv1ulogin)
+ * [POST(GETも許可) /api/v1/u/login](#post(getも許可)-apiv1ulogin)
  * [GET /api/v1/u/logout](#get-apiv1ulogout)
- * [POST（GETも許可） /api/v1/u/signup](#post（getも許可）-apiv1usignup)
+ * [POST(GETも許可) /api/v1/u/signup](#post(getも許可)-apiv1usignup)
  * [GET /api/v1/u/:id/follow](#get-apiv1uidfollow)
  * [GET /api/v1/u/:id/unfollow](#get-apiv1uidunfollow)
  * [GET /api/v1/u/follows](#get-apiv1ufollows)
@@ -81,12 +81,12 @@ Content-Type: application/json
 ]
 ```
 
-### POST（GETも許可） /api/v1/t/create
+### POST(GETも許可) /api/v1/t/create
 つぶやきを投稿する
 
 
 ```
-POST（GETも許可） /api/v1/t/create HTTP/1.1
+POST(GETも許可) /api/v1/t/create HTTP/1.1
 Host: orotter-balmychan.c9.io
 ```
 
@@ -246,7 +246,7 @@ Content-Type: application/json
 ]
 ```
 
-### POST（GETも許可） /api/v1/u/login
+### POST(GETも許可) /api/v1/u/login
 ログイン
 
 * username
@@ -257,7 +257,7 @@ Content-Type: application/json
  * Type: string
 
 ```
-POST（GETも許可） /api/v1/u/login HTTP/1.1
+POST(GETも許可) /api/v1/u/login HTTP/1.1
 Host: orotter-balmychan.c9.io
 ```
 
@@ -303,7 +303,7 @@ Content-Type: application/json
 }
 ```
 
-### POST（GETも許可） /api/v1/u/signup
+### POST(GETも許可) /api/v1/u/signup
 ユーザー作成
 
 * username
@@ -317,7 +317,7 @@ Content-Type: application/json
  * Type: string
 
 ```
-POST（GETも許可） /api/v1/u/signup HTTP/1.1
+POST(GETも許可) /api/v1/u/signup HTTP/1.1
 Host: orotter-balmychan.c9.io
 ```
 
