@@ -7,15 +7,15 @@ API => http://orotter-balmychan.c9.io
 
 * [つぶやき](#つぶやき)
  * [GET /api/v1/t](#get-apiv1t)
- * [POST,GET /api/v1/t/create](#post,get-apiv1tcreate)
+ * [POST /api/v1/t/create](#post-apiv1tcreate)
  * [GET /api/v1/t/:id/favorite](#get-apiv1tidfavorite)
  * [GET /api/v1/t/:id/unfavorite](#get-apiv1tidunfavorite)
 * [ユーザー](#ユーザー)
  * [GET /api/v1/u](#get-apiv1u)
- * [POST,GET /api/v1/u/login](#post,get-apiv1ulogin)
+ * [POST /api/v1/u/login](#post-apiv1ulogin)
  * [GET /api/v1/u/logout](#get-apiv1ulogout)
  * [GET /api/v1/u/current](#get-apiv1ucurrent)
- * [POST,GET /api/v1/u/signup](#post,get-apiv1usignup)
+ * [POST /api/v1/u/signup](#post-apiv1usignup)
  * [GET /api/v1/u/:id/follow](#get-apiv1uidfollow)
  * [GET /api/v1/u/:id/unfollow](#get-apiv1uidunfollow)
  * [GET /api/v1/u/follows](#get-apiv1ufollows)
@@ -82,17 +82,17 @@ Content-Type: application/json
 ]
 ```
 
-### POST,GET /api/v1/t/create
+### POST /api/v1/t/create
 つぶやきを投稿する
 
 
 ```
-POST,GET /api/v1/t/create HTTP/1.1
+POST /api/v1/t/create HTTP/1.1
 Host: orotter-balmychan.c9.io
 ```
 
 ```
-HTTP/1.1 200 OK
+HTTP/1.1 201 Created
 Content-Type: application/json
 
 [
@@ -247,7 +247,7 @@ Content-Type: application/json
 ]
 ```
 
-### POST,GET /api/v1/u/login
+### POST /api/v1/u/login
 ログイン
 
 * username
@@ -258,12 +258,18 @@ Content-Type: application/json
  * Type: string
 
 ```
-POST,GET /api/v1/u/login HTTP/1.1
+POST /api/v1/u/login HTTP/1.1
+Content-Type: application/json
 Host: orotter-balmychan.c9.io
+
+{
+  "username": "balmychan",
+  "password": "hogehoge"
+}
 ```
 
 ```
-HTTP/1.1 200 OK
+HTTP/1.1 201 Created
 Content-Type: application/json
 
 {
@@ -329,7 +335,7 @@ Content-Type: application/json
 }
 ```
 
-### POST,GET /api/v1/u/signup
+### POST /api/v1/u/signup
 ユーザー作成
 
 * username
@@ -343,12 +349,19 @@ Content-Type: application/json
  * Type: string
 
 ```
-POST,GET /api/v1/u/signup HTTP/1.1
+POST /api/v1/u/signup HTTP/1.1
+Content-Type: application/json
 Host: orotter-balmychan.c9.io
+
+{
+  "username": "balmychan",
+  "name": "Ayumi Goto",
+  "password": "hogehoge"
+}
 ```
 
 ```
-HTTP/1.1 200 OK
+HTTP/1.1 201 Created
 Content-Type: application/json
 
 {
