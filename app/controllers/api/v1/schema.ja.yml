@@ -167,6 +167,12 @@ definitions:
               rel: instances
               title: "つぶやき一覧"
               type: object
+            - description: "指定のユーザーのつぶやき一覧を返す"
+              href: "/api/v1/u/{(#/definitions/user/definitions/id)}/t"
+              method: GET
+              rel: instances
+              title: "指定ユーザーのつぶやき一覧"
+              type: object
             - description: "つぶやきを投稿する"
               href: "/api/v1/t/create"
               method: POST

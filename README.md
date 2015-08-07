@@ -7,6 +7,7 @@ API => http://orotter-balmychan.c9.io
 
 * [つぶやき](#つぶやき)
  * [GET /api/v1/t](#get-apiv1t)
+ * [GET /api/v1/u/:id/t](#get-apiv1uidt)
  * [POST /api/v1/t/create](#post-apiv1tcreate)
  * [GET /api/v1/t/:id/favorite](#get-apiv1tidfavorite)
  * [GET /api/v1/t/:id/unfavorite](#get-apiv1tidunfavorite)
@@ -52,6 +53,41 @@ API => http://orotter-balmychan.c9.io
 
 ```
 GET /api/v1/t HTTP/1.1
+Host: orotter-balmychan.c9.io
+```
+
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+[
+  {
+    "id": 1,
+    "user_id": 1,
+    "text": "オロなう",
+    "created_at": "2015-08-05T06:50:24.000Z",
+    "updated_at": "2015-08-05T06:50:24.000Z",
+    "favorites": 100,
+    "user": {
+      "id": 1,
+      "username": "balmychan",
+      "name": "Ayumi Goto",
+      "image": "https://pbs.twimg.com/profile_images/1286698114/KM56TsK9",
+      "created_at": "2015-08-05T06:50:24.000Z",
+      "updated_at": "2015-08-05T06:50:24.000Z",
+      "follows_count": 20,
+      "followers_count": 20,
+      "tweets_count": 1200
+    }
+  }
+]
+```
+
+### GET /api/v1/u/:id/t
+指定のユーザーのつぶやき一覧を返す
+
+```
+GET /api/v1/u/1/t HTTP/1.1
 Host: orotter-balmychan.c9.io
 ```
 

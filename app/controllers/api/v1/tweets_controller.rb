@@ -1,7 +1,13 @@
 module Api::V1
   class TweetsController < ApiController
     def index
-        render :json => current_user.tweets.order(:created_at => :desc)
+        @tweets = Tweet.where(:user_id => [current_user.id].concat(current_user.follows.pluck(:id))).order(:created_at => :desc).limit(100)
+        render :json => @tweets
+    end
+    
+    def index_for_user
+      @tweets = Tweet.where(:user_id => params[:id]).order(:created_at => :desc).limit(100)
+      render :json => @tweets
     end
     
     def create
