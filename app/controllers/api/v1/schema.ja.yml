@@ -71,7 +71,7 @@ definitions:
                         example: "菊"
             - description: "ログイン"
               href: "/api/v1/u/login"
-              method: POST(GETも許可)
+              method: POST, GET
               rel: instance
               title: "ログイン"
               type: object
@@ -89,7 +89,7 @@ definitions:
               type: object
             - description: "ユーザー作成"
               href: "/api/v1/u/signup"
-              method: POST(GETも許可)
+              method: POST, GET
               rel: instance
               title: "ユーザー作成"
               type: object
@@ -163,7 +163,7 @@ definitions:
               type: object
             - description: "つぶやきを投稿する"
               href: "/api/v1/t/create"
-              method: POST(GETも許可)
+              method: POST, GET
               rel: instances
               title: "つぶやきを投稿する"
               type: object
