@@ -16,6 +16,9 @@ Rails.application.routes.draw do
       get  'u/followers'    => 'users#followers'
       get  't'        => 'tweets#index'
       get  't/create' => 'tweets#create'
+      post 't/create' => 'tweets#create'
+      # match 't/create', to: 'tweets#create', via: [:get, :post, :options]
+      # options 't/create' => 'tweets#create'
       get  't/:id/favorite'   => 'tweets#favorite'
       get  't/:id/unfavorite' => 'tweets#unfavorite'
       #get 'a' => 'articles#index'

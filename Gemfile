@@ -30,6 +30,8 @@ gem 'devise'
 gem 'activerecord-reputation-system'
 # For README.md `jdoc app/controllers/api/v1/schema.ja.yml > README.md
 gem 'jdoc'
+# For CORS (Reference: http://qiita.com/kadotami/items/3d56cf647e60495eaac8)
+gem 'rack-cors', :require => 'rack/cors'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -42,7 +44,8 @@ gem 'jdoc'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-
+  # Pry
+  gem 'pry-byebug'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
