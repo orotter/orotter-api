@@ -120,6 +120,9 @@ Content-Type: application/json
 ### POST /api/v1/t/create
 つぶやきを投稿する
 
+* text
+ * Example: `"オロなう"`
+ * Type: string
 
 ```
 POST /api/v1/t/create HTTP/1.1
