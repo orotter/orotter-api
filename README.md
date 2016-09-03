@@ -2,7 +2,6 @@
 Orotter API References
 簡易化のために、CSRF対応はOFFにしています
 また、ログイン認証もOAuthなどは使用せず、パラメータを付与してリクエストするだけでできるようになっています
-API => http://orotter-balmychan.c9.io
 
 
 * [つぶやき](#つぶやき)
