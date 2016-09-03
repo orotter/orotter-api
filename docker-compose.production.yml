@@ -1,0 +1,31 @@
+version: '2'
+services:
+  db:
+    image: mysql
+    volumes:
+      - db-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: orotter
+  app:
+    build: .
+    command: bash -c "bundle exec rails s -p 80 -b '0.0.0.0'"
+    links:
+      - db
+    depends_on:
+      - db
+    ports:
+      - "80:80"
+    environment:
+      RAILS_ENV: development
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: orotter
+#  web:
+#    build: ./public
+#    command: bash -c "npm run postinstall && npm start"
+#    volumes:
+#      - ./public:/web
+#      - /web/node_modules
+volumes:
+  db-data:
+    driver: local
