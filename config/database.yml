@@ -27,6 +27,6 @@ test:
 production:
   <<: *default
   adapter: postgresql
-  encoding: unicode
+  host: postgres://nmgapqsxtaxbla:ONavx7K6UTvsB1iVlARQEKAamF@ec2-50-17-253-74.compute-1.amazonaws.com:5432/da1vuthlura9i7
+  encoding: utf8
   pool: 5
-  database: orotter_prod
