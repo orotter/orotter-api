@@ -187,7 +187,6 @@ DEPENDENCIES
   jdoc
   jquery-rails
   mysql2
-  pg
   pry-byebug
   rack-cors
   rails (= 4.2.1)

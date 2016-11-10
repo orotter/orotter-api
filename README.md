@@ -1,3 +1,29 @@
+# How to launch orotter api for Windows
+
+## 1. Install Hyper-V
+
+[こちら](https://msdn.microsoft.com/ja-jp/virtualization/hyperv_on_windows/quick_start/walkthrough_install)を参考に、Hyper-Vをインストールする。要Windows10 Pro
+
+## 2. Install Docker
+
+[Docker](https://www.docker.com/)のサイトから、Docker for Windowsをダウンロードし、インストールする
+
+Docker for Windowsをインストール後、設定からCドライブを共有設定にしておくのを忘れない（これをしないとローカルのファイル群とマッピングできない）
+
+## 3. Launch
+
+App, DBはdocker-composeで起動できる
+
+```
+# git clone https://github.com/balmychan/orotter-api.git
+# cd orotter-api
+# docker-compose build
+# docker-compose run -d app bash -c "bundle exec rake db:create"
+# docker-compose run -d app bash -c "bundle exec rake db:migrate"
+# docker-compose run -d app bash -c "bundle exec rake db:seed"
+# docker-compose up
+```
+
 # Orotter API References
 Orotter API References
 簡易化のために、CSRF対応はOFFにしています
