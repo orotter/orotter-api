@@ -26,4 +26,7 @@ test:
 
 production:
   <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: orotter_prod
