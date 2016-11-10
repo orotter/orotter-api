@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.1'
 # Use mysql2 as the database for Active Record
 gem 'mysql2'
+# Use postgresql for Heroku
+gem 'pg'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 # Use SCSS for stylesheets
