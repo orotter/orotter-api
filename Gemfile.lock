@@ -102,6 +102,7 @@ GEM
     pry-byebug (3.2.0)
       byebug (~> 5.0)
       pry (~> 0.10)
+    postgresql (0.19.0)
     rack (1.6.1)
     rack-cors (0.4.0)
     rack-test (0.6.3)
