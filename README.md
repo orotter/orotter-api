@@ -15,7 +15,7 @@ Docker for Windowsをインストール後、設定からCドライブを共有�
 App, DBはdocker-composeで起動できる
 
 ```
-# git clone https://github.com/balmychan/orotter-api.git
+# git clone https://github.com/orotter/orotter-api.git
 # cd orotter-api
 # docker-compose build
 # docker-compose run -d app bash -c "bundle exec rake db:create"
@@ -78,7 +78,7 @@ Orotter API References
 
 ```
 GET /api/v1/t HTTP/1.1
-Host: orotter-balmychan.c9.io
+Host: orotter.com
 ```
 
 ```
@@ -113,7 +113,7 @@ Content-Type: application/json
 
 ```
 GET /api/v1/u/1/t HTTP/1.1
-Host: orotter-balmychan.c9.io
+Host: orotter.com
 ```
 
 ```
@@ -152,7 +152,7 @@ Content-Type: application/json
 
 ```
 POST /api/v1/t/create HTTP/1.1
-Host: orotter-balmychan.c9.io
+Host: orotter.com
 ```
 
 ```
@@ -187,7 +187,7 @@ Content-Type: application/json
 
 ```
 GET /api/v1/t/1/favorite HTTP/1.1
-Host: orotter-balmychan.c9.io
+Host: orotter.com
 ```
 
 ```
@@ -220,7 +220,7 @@ Content-Type: application/json
 
 ```
 GET /api/v1/t/1/unfavorite HTTP/1.1
-Host: orotter-balmychan.c9.io
+Host: orotter.com
 ```
 
 ```
@@ -289,7 +289,7 @@ Content-Type: application/json
 
 ```
 GET /api/v1/u?keyword=%E8%8F%8A HTTP/1.1
-Host: orotter-balmychan.c9.io
+Host: orotter.com
 ```
 
 ```
@@ -324,7 +324,7 @@ Content-Type: application/json
 ```
 POST /api/v1/u/login HTTP/1.1
 Content-Type: application/json
-Host: orotter-balmychan.c9.io
+Host: orotter.com
 
 {
   "username": "balmychan",
@@ -354,7 +354,7 @@ Content-Type: application/json
 
 ```
 GET /api/v1/u/logout HTTP/1.1
-Host: orotter-balmychan.c9.io
+Host: orotter.com
 ```
 
 ```
@@ -379,7 +379,7 @@ Content-Type: application/json
 
 ```
 GET /api/v1/u/current HTTP/1.1
-Host: orotter-balmychan.c9.io
+Host: orotter.com
 ```
 
 ```
@@ -415,7 +415,7 @@ Content-Type: application/json
 ```
 POST /api/v1/u/signup HTTP/1.1
 Content-Type: application/json
-Host: orotter-balmychan.c9.io
+Host: orotter.com
 
 {
   "username": "balmychan",
@@ -446,7 +446,7 @@ Content-Type: application/json
 
 ```
 GET /api/v1/u/1/follow HTTP/1.1
-Host: orotter-balmychan.c9.io
+Host: orotter.com
 ```
 
 ```
@@ -471,7 +471,7 @@ Content-Type: application/json
 
 ```
 GET /api/v1/u/1/unfollow HTTP/1.1
-Host: orotter-balmychan.c9.io
+Host: orotter.com
 ```
 
 ```
@@ -496,7 +496,7 @@ Content-Type: application/json
 
 ```
 GET /api/v1/u/follows HTTP/1.1
-Host: orotter-balmychan.c9.io
+Host: orotter.com
 ```
 
 ```
@@ -523,7 +523,7 @@ Content-Type: application/json
 
 ```
 GET /api/v1/u/followers HTTP/1.1
-Host: orotter-balmychan.c9.io
+Host: orotter.com
 ```
 
 ```
